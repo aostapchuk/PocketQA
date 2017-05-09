@@ -167,5 +167,24 @@ namespace PocketQA.Pages
             var submitButton = Wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("[type='submit']")));
             submitButton.Click();
         }
+
+        public IWebElement FindFieldByLabel(string labelText)
+        {
+            var label = FindElementByXPath($"//label[text() = '{labelText}']");
+            var fieldId = label.GetAttribute("for");
+            var input = FindElementById(fieldId);
+            return input;
+        }
+
+        public void SetFieldValue(string label, string value)
+        {
+            var input = FindFieldByLabel(label);
+            if (input.TagName.ToLower() == "input" &&
+                !"readonly".Equals(input.GetAttribute("readonly"), StringComparison.OrdinalIgnoreCase))
+            {
+                input.Clear();
+            }
+            input.SendKeys(value);
+        }
     }
 }

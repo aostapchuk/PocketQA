@@ -1,5 +1,6 @@
 ﻿using System;
 using OpenQA.Selenium;
+using PocketQA.Pages;
 using TechTalk.SpecFlow;
 
 namespace PocketQA
@@ -23,6 +24,29 @@ namespace PocketQA
                 default:
                     throw new NotSupportedException($"Key {key} is not supported.");
             }
+        }
+
+        [Given("I have entered \"(.*)\" into \"(.*)\" field")]
+        public void EnterValueIntoField(string value, string field)
+        {
+            var webComponent = new WebComponent(Driver);
+            webComponent.SetFieldValue(field, value);
+        }
+
+        [Given("I have checked \"(.*)\"")]
+        public void EnterValueIntoField(string field)
+        {
+            var webComponent = new WebComponent(Driver);
+            var input = webComponent.FindFieldByLabel(field);
+            input.Click();
+        }
+
+        [Given("I have submitted page")]
+        [When("I submit page")]
+        public void SubmitPage()
+        {
+            var webComponent = new WebComponent(Driver);
+            webComponent.SubmitPage();
         }
     }
 }
