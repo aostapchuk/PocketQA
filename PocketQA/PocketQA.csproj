@@ -59,6 +59,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArgumentValidation.cs" />
     <Compile Include="AssertUrl.cs" />
     <Compile Include="Steps\CommonSteps.cs" />
     <Compile Include="Steps\CommonUiSteps.cs" />

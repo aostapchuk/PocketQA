@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using OpenQA.Selenium;
 using PocketQA.Pages;
 using TechTalk.SpecFlow;
@@ -39,6 +40,16 @@ namespace PocketQA.Steps
             var webComponent = new WebComponent(Driver);
             var input = webComponent.FindFieldByLabel(field);
             input.Click();
+        }
+
+        [Given("I have checked \"(.*)\" in \"(.*)\" field")]
+        public void CheckValueInField(string value, string field)
+        {
+            var webComponent = new WebComponent(Driver);
+            var fieldElement = webComponent.FindFieldByLabel(field);
+            var valueElements = fieldElement.FindDescendants(WebComponent.ByText(value));
+            var valueElement = valueElements.FirstOrDefault(el => el.Displayed && value.Equals(el.Text, StringComparison.CurrentCultureIgnoreCase));
+            valueElement.Click();
         }
 
         [Given("I have submitted page")]

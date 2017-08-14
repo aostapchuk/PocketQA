@@ -10,6 +10,8 @@ namespace PocketQA.Pages
 {
     public class WebComponent
     {
+        public static By ByText(string text) => By.XPath($"//*[text() = '{text}']");
+
         public readonly RemoteWebDriver Driver;
 
         private WebDriverWait m_wait;
@@ -20,6 +22,8 @@ namespace PocketQA.Pages
 
         public WebComponent(RemoteWebDriver driver)
         {
+            ArgumentValidation.ThrowIfNull(driver, nameof(driver));
+
             Driver = driver;
         }
 
@@ -99,7 +103,12 @@ namespace PocketQA.Pages
 
         public static IWebElement FindElementByText(ISearchContext context, string text)
         {
-            return FindElement(context, By.XPath($"//*[text() = '{text}']"));
+            return FindElement(context, ByText(text));
+        }
+
+        public IWebElement FindElementByText(string text)
+        {
+            return FindElement(ByText(text));
         }
 
         public static IWebElement FindElementByTextContains(ISearchContext context, string text)
@@ -170,16 +179,23 @@ namespace PocketQA.Pages
 
         public IWebElement FindFieldByLabel(string labelText)
         {
-            var label = FindElementByXPath($"//label[text() = '{labelText}']");
+            var label = FindLabelByText(labelText);
             var fieldId = label.GetAttribute("for");
             var input = FindElementById(fieldId);
             return input;
         }
 
+        private IWebElement FindLabelByText(string labelText)
+        {
+            var label = FindElementByXPath($"//label[normalize-space(text()) = '{labelText}' or normalize-space(text()) = '{labelText}:']");
+            return label;
+        }
+
         public void SetFieldValue(string label, string value)
         {
             var input = FindFieldByLabel(label);
-            if (input.TagName.ToLower() == "input" &&
+            var tagName = input.TagName.ToLower();
+            if ((tagName == "input" || tagName == "textarea") &&
                 !"readonly".Equals(input.GetAttribute("readonly"), StringComparison.OrdinalIgnoreCase))
             {
                 input.Clear();
