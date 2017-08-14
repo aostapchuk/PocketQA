@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
-namespace PocketQA
+namespace PocketQA.Steps
 {
     [Binding]
     public class BaseUiSteps

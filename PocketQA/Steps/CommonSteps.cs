@@ -2,7 +2,7 @@
 using System.Threading;
 using TechTalk.SpecFlow;
 
-namespace PocketQA
+namespace PocketQA.Steps
 {
     [Binding]
     public sealed class CommonSteps

@@ -60,14 +60,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssertUrl.cs" />
-    <Compile Include="CommonSteps.cs" />
-    <Compile Include="CommonUiSteps.cs" />
+    <Compile Include="Steps\CommonSteps.cs" />
+    <Compile Include="Steps\CommonUiSteps.cs" />
     <Compile Include="DataHelper.cs" />
-    <Compile Include="GridSteps.cs" />
+    <Compile Include="Steps\GridSteps.cs" />
     <Compile Include="Pages\Grid.cs" />
     <Compile Include="Pages\WebComponent.cs" />
     <Compile Include="TakingScreenshots.cs" />
-    <Compile Include="BaseUiSteps.cs" />
+    <Compile Include="Steps\BaseUiSteps.cs" />
     <Compile Include="UrlHelper.cs" />
     <Compile Include="WebElementExtensions.cs" />
     <Compile Include="Pages\LoginPage.cs" />

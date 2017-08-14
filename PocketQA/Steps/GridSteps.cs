@@ -1,8 +1,8 @@
 ﻿using NUnit.Framework;
-using TechTalk.SpecFlow;
 using PocketQA.Pages;
+using TechTalk.SpecFlow;
 
-namespace PocketQA
+namespace PocketQA.Steps
 {
     [Binding]
     public sealed class GridSteps : BaseUiSteps

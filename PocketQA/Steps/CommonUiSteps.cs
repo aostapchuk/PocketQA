@@ -3,7 +3,7 @@ using OpenQA.Selenium;
 using PocketQA.Pages;
 using TechTalk.SpecFlow;
 
-namespace PocketQA
+namespace PocketQA.Steps
 {
     public sealed class CommonUiSteps : BaseUiSteps
     {
