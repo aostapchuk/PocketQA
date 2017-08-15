@@ -20,8 +20,11 @@
     <dependencies>
       <dependency id="Newtonsoft.Json" version="10.0.3" />
       <dependency id="NUnit" version="3.7.1" />
+      <dependency id="Selenium.Chrome.WebDriver" version="2.30" />
+      <dependency id="Selenium.Firefox.WebDriver" version="0.18.0" />
       <dependency id="Selenium.Support" version="3.5.0" />
       <dependency id="Selenium.WebDriver" version="3.5.0" />
+      <dependency id="Selenium.WebDriver.IEDriver" version="3.5.0" />
       <dependency id="SpecFlow" version="2.2.0" />
       <dependency id="SpecFlow.NUnit" version="2.2.0" />
     </dependencies>
