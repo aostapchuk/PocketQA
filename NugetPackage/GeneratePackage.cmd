@@ -2,7 +2,7 @@
 
 echo Building project . . .
 
-"C:\Program Files (x86)\MSBuild\14.0\Bin\msbuild.exe" PocketQA.sln /maxcpucount:4 /p:Configuration=Release /p:Platform="Any CPU" /nologo || GOTO ERROR
+"C:\Program Files (x86)\MSBuild\14.0\Bin\msbuild.exe" ..\PocketQA.sln /maxcpucount:4 /p:Configuration=Release /p:Platform="Any CPU" /nologo || GOTO ERROR
 
 echo Generating Nuget package . . .
 

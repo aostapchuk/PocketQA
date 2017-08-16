@@ -30,6 +30,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="PocketQA\bin\Release\PocketQA.dll" target="lib\net45" />
+    <file src="..\PocketQA\bin\Release\PocketQA.dll" target="lib\net45" />
   </files>
 </package>
