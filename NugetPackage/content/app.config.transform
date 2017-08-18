@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<configuration>
+    <configSections>
+        <section name="specFlow" type="TechTalk.SpecFlow.Configuration.ConfigurationSectionHandler, TechTalk.SpecFlow" />
+    </configSections>
+    <appSettings>
+        <add key="BaseUrl" value="https://localhost:443" />
+        <add key="Browser" value="chrome" />
+        <add key="DefaultWaitTimeoutInSeconds" value="3" />
+        <add key="DefaultWaitForPageRedirectInSeconds" value="2" />
+    </appSettings>
+    <specFlow>
+	    <stepAssemblies>
+	      <stepAssembly assembly="PocketQA" />
+	    </stepAssemblies>
+	    <unitTestProvider name="NUnit" />
+    </specFlow>
+</configuration>
