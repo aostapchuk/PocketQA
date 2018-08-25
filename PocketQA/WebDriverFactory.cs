@@ -13,23 +13,28 @@ namespace PocketQA
             switch (browser.ToLower())
             {
                 case "chrome":
+                {
                     var options = new ChromeOptions();
                     options.AddArgument("--start-maximized");
                     return new ChromeDriver(options);
+                }
 
                 case "ff":
                 case "firefox":
-                    var profile = new FirefoxProfile();
-                    profile.SetPreference("network.automatic-ntlm-auth.trusted-uris", "https://default.local-dev.spendvu.com");
-                    profile.SetPreference("webdriver_assume_untrusted_issuer", false);
-                    profile.SetPreference("webdriver_accept_untrusted_certs", true);
-                    profile.AcceptUntrustedCertificates = true;
-                    profile.AssumeUntrustedCertificateIssuer = false;
-                    return new FirefoxDriver(profile);
+                {
+                    var options = new FirefoxOptions
+                    {
+                        AcceptInsecureCertificates = true
+                    };
+                    return new FirefoxDriver(options);
+                }
 
                 case "ie":
                 case "internetexplorer":
-                    return new InternetExplorerDriver(".", new InternetExplorerOptions(), TimeSpan.FromMinutes(2));
+                {
+                    var options = new InternetExplorerOptions();
+                    return new InternetExplorerDriver(options);
+                }
 
                 default:
                     throw new ArgumentOutOfRangeException(nameof(browser), browser, "Browser is not supported.");

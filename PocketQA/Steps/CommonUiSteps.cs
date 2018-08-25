@@ -8,6 +8,7 @@ namespace PocketQA.Steps
 {
     public sealed class CommonUiSteps : BaseUiSteps
     {
+        [Given("I have pressed (.*)")]
         [When("I press (.*)")]
         public void WhenIPressKey(string key)
         {

@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using OpenQA.Selenium;
 using PocketQA.Steps;
 using TechTalk.SpecFlow;
 
@@ -96,7 +97,7 @@ namespace PocketQA
             var fileName = ReplaceInvalidFileNameChars($"{StepIndex:00} - {ScenarioContext.Current.StepContext.StepInfo.Text}  - {window.Size.Width}x{window.Size.Height}");
             var screenshotPath = Path.Combine(ScenarioFolderPath, $"{fileName}.jpg");
             var screenshot = Driver.GetScreenshot();
-            screenshot.SaveAsFile(screenshotPath, ImageFormat.Jpeg);
+            screenshot.SaveAsFile(screenshotPath, ScreenshotImageFormat.Jpeg);
         }
 
 

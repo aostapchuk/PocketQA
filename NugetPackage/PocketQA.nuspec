@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>PocketQA</id>
-    <version>0.0.6</version>
+    <version>0.0.7</version>
     <authors>Alexander Ostapchuk</authors>
     <owners>Alexander Ostapchuk</owners>
     <licenseUrl>https://github.com/aostapchuk/PocketQA</licenseUrl>
@@ -16,21 +16,22 @@
     <releaseNotes>
     </releaseNotes>
     <copyright>Copyright 2017 Alexander Ostapchuk</copyright>
-    <tags>QA, SpecFlow, Selenium, auto testing</tags>
+    <tags>QA, SpecFlow, Selenium, auto testing, Chrome, FireFox, Internet Explorer, Web</tags>
     <dependencies>
-      <dependency id="Newtonsoft.Json" version="10.0.3" />
-      <dependency id="NUnit" version="3.7.1" />
-      <dependency id="Selenium.Chrome.WebDriver" version="2.30" />
-      <dependency id="Selenium.Firefox.WebDriver" version="0.18.0" />
-      <dependency id="Selenium.Support" version="3.5.0" />
-      <dependency id="Selenium.WebDriver" version="3.5.0" />
-      <dependency id="Selenium.WebDriver.IEDriver" version="3.5.0" />
-      <dependency id="SpecFlow" version="2.2.0" />
-      <dependency id="SpecFlow.NUnit" version="2.2.0" />
+      <dependency id="Newtonsoft.Json" version="11.0.2" />
+      <dependency id="NUnit" version="3.10.1" />
+      <dependency id="Selenium.Chrome.WebDriver" version="2.40" />
+      <dependency id="Selenium.Firefox.WebDriver" version="0.21.0" />
+      <dependency id="Selenium.Support" version="3.14.0" />
+      <dependency id="Selenium.WebDriver" version="3.14.0" />
+      <dependency id="Selenium.WebDriver.IEDriver" version="3.14.0" />
+      <dependency id="SpecFlow" version="2.4.0" />
+      <dependency id="SpecFlow.NUnit" version="2.4.0" />
+      <dependency id="System.ValueTuple" version="4.3.0" />
     </dependencies>
   </metadata>
   <files>
-    <file src="..\PocketQA\bin\Release\PocketQA.dll" target="lib\net45" />
+    <file src="..\PocketQA\bin\Release\PocketQA.dll" target="lib\net461" />
     <file src="content\app.config.transform" target="content" />
   </files>
 </package>
